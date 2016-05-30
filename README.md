@@ -1,8 +1,8 @@
 # colloquial
 
-A series of Quil sketches re-implementing the Processing examples and techniques presented in [Generative Design](http://www.generative-gestaltung.de), a wonderful book by Hartmut Bohnacker, Benedikt Groß, Julia Laub, & Claudius Lazzeroni. 
+A series of [Quil](http://quil.info) sketches re-implementing the [Processing](https://processing.org) examples and techniques presented in [Generative Design](http://www.generative-gestaltung.de), a wonderful book by Hartmut Bohnacker, Benedikt Groß, Julia Laub, & Claudius Lazzeroni. 
 
-I'm working through some of the examples, re-implementing them in Clojure, trying to apply a functional approach rather than the imperative one they (very successfully) deploy. The first step in doing this is to use the [Quil](http://quil.info) environment, a Clojure wrapper over Processing (and a Clojurescript wrapper over processing.js, the javascript implementation). [Quil offers a 'fun-mode' approach](https://github.com/quil/quil/wiki/Functional-mode-%28fun-mode%29) where shared state is threaded & updated through the setup, draw, and event-handler functions, meaning you can keep the functions themselves pure.
+I'm working through some of the examples, re-implementing them in Clojure, trying to apply a functional approach rather than the imperative one they (very successfully) deploy. The first step in doing this is to use the [Quil](http://quil.info) environment, a Clojure wrapper over Processing (and a Clojurescript wrapper over [processing.js](http://processingjs.org) the javascript implementation). [Quil offers a 'fun-mode' approach](https://github.com/quil/quil/wiki/Functional-mode-%28fun-mode%29) where shared state is threaded & updated through the setup, draw, and event-handler functions, meaning you can keep the functions themselves pure.
 
 ## Usage
 
