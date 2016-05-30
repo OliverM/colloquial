@@ -34,13 +34,13 @@
 (defn draw-1-1-1-01-fun
    "Re-implement the colour spectrum example in a more functional way"
    []
-   (q/color-mode :hsb (q/width) (q/height) 100) ;; set hue and saturation range to window dimensions, brightness 0 to 100
-   (q/no-stroke)
-   (let [step-x (+ (q/mouse-x) 2)
-         step-y (+ (q/mouse-y) 2)
-         width (q/width)
-         height (q/height)]
-     (doseq [grid-y (range 0 height step-y) ;; doseq doesn't hold on to head of list
-             grid-x (range 0 width step-x)]
-       (q/fill grid-x (- height grid-y) 100) ;; set current colour according to rect position and scale set previously
-       (q/rect grid-x grid-y step-x step-y))))
+  (q/color-mode :hsb (q/width)  (q/height) 100) ;; set hue and saturation range to window dimensions, brightness 0 to 100
+  (q/no-stroke)
+  (let [step-x (+ (q/mouse-x) 2)
+        step-y (+ (q/mouse-y) 2)
+        width (q/width)
+        height (q/height)]
+    (doseq [grid-y (range 0 height step-y) ;; doseq doesn't hold on to head of list
+            grid-x (range 0 width step-x)]
+      (q/fill grid-x (- height grid-y) 100) ;; set current colour according to rect position and scale set previously
+      (q/rect grid-x grid-y step-x step-y))))
