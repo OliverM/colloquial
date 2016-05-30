@@ -36,3 +36,15 @@
 ;; (run-sketch no-state :draw p10/draw-1-0-01)
 ;; (run-sketch no-state :draw p111/draw-1-1-1-01-imp)
 ;; (run-sketch no-state :draw p111/draw-1-1-1-01-fun)
+;; (run-sketch (concat threaded-state p121/sketch1-2-1-args))
+
+(q/defsketch colloquial-fun
+  :title "Threaded state demo"
+  :settings #(q/smooth 2)
+  :size [720 720]
+  :features [:keep-on-top]
+  :setup p121/setup1-2-1-01
+  :draw p121/draw1-2-1-01
+  :update p121/update1-2-1-01
+  :middleware [m/fun-mode]
+  )
