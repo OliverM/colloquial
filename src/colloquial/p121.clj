@@ -18,10 +18,10 @@
 
 (defn setup1-2-1-01
   []
+  (q/no-stroke)
   (q/color-mode :hsb 360 100 100)
   (shake-colours {:tile-count-x 2
                   :tile-count-y 10
-                  ;; :colours nil ;; used for ASE export; TODO
                   :interp-short true}))
 
 (defn update1-2-1-01
@@ -60,3 +60,13 @@
    :draw draw1-2-1-01
    :update update1-2-1-01
    :mouse-clicked mouse-click1-2-1-01])
+
+;; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;; additional colour models stashed for now;
+;; investigate further post presentation
+
+#_(defn step-colour-model [n]
+  (let [models [:hsb :rgb :hcy :cie1931a]
+        model-count (count models)
+        model-index (mod n model-count)]
+    (nth models model-count )))
