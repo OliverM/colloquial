@@ -15,7 +15,7 @@
     (let [h (q/height)
           w (q/width)
           ^int circle-resolution (q/map-range (+ (q/mouse-y) 100) 0 h 2 10)
-          radius (-> (- (q/mouse-x) (/ w 2)))
+          radius (-> (q/mouse-x) (- (/ w 2)))
           angle (/ q/TWO-PI circle-resolution)]
       (q/push-matrix)
       (q/translate (/ w 2) (/ h 2))
