@@ -36,5 +36,5 @@
 ;; (run-sketch no-state :draw p10/draw-1-0-01)
 ;; (run-sketch no-state :draw p111/draw-1-1-1-01-imp)
 ;; (run-sketch no-state :draw p111/draw-1-1-1-01-fun)
-(run-sketch (concat threaded-state p121/sketch1-2-1-args))
+;; (run-sketch (concat threaded-state p121/sketch1-2-1-args))
 

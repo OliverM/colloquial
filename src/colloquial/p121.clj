@@ -1,15 +1,15 @@
 (ns colloquial.p121
-  (:require [quil.core :as q]))
+  (:require [quil.core :as q]
+            [thi.ng.color.core :as c]))
 
 (defn- shake-colours
   [s]
-  (println (str "Shaking colours..." ))
-  (assoc s :colours-left (vec (repeatedly
-                                 (:tile-count-y s)
-                                #(q/color (q/random 0 60) (q/random 0 100) 100)))
-         :colours-right (vec (repeatedly
-                                (:tile-count-y s)
-                               #(q/color (q/random 160 190) 100 (q/random 0 100))))))
+  (let [col-count (:tile-count-y s)
+        left-col-gen #(q/color (q/random 0 60) (q/random 0 100) 100)
+        right-col-gen #(q/color (q/random 160 190) 100 (q/random 0 100))]
+    (assoc s
+           :colours-left (vec (repeatedly col-count left-col-gen))
+           :colours-right (vec (repeatedly col-count right-col-gen)))))
 
 (defn- flip-colour-model
   [s]
