@@ -7,24 +7,24 @@
   ;; smooth set by :settings
   (q/no-fill)
   (q/background 360)
-  {:stroke-color (q/color 0, 10)})
+  {:stroke-color (q/color 0 10)})
 
 (defn draw2-0-2
   [s]
   (when (q/mouse-pressed?)
     (let [h (q/height)
           w (q/width)
-          circle-resolution (q/map-range (+ (q/mouse-y) 100) 0 h 2 10)
-          radius (/ (q/mouse-x) 2)
+          ^int circle-resolution (q/map-range (+ (q/mouse-y) 100) 0 h 2 10)
+          radius (-> (- (q/mouse-x) (/ w 2)))
           angle (/ q/TWO-PI circle-resolution)]
       (q/push-matrix)
       (q/translate (/ w 2) (/ h 2))
       (q/stroke-weight 2)
       (q/stroke (s :stroke-color))
       (q/begin-shape)
-      (doseq [i (range circle-resolution)
-              :let [x (q/cos (* i angle radius))
-                    y (q/sin (* i angle radius))]]
+      (doseq [^int i (range circle-resolution)
+              :let [^float x (+ 0  (* (q/cos (* i angle)) radius))
+                    ^float y (+ 0  (* (q/sin (* i angle)) radius))]]
         (q/vertex x y))
       (q/end-shape)
       (q/pop-matrix))))
@@ -35,7 +35,8 @@
     :1 (assoc s :stroke-color (q/color 0 10))
     :2 (assoc s :stroke-color (q/color 192 100 64 10))
     :3 (assoc s :stroke-color (q/color 52 100 71 10))
-    true s))
+    :d (do (q/background 360) s)
+    s))
 
 (def sketch2-0-2-args
   [:setup setup2-0-2
