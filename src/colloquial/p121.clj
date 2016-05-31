@@ -56,5 +56,7 @@
     (flip-colour-model s)))
 
 (def sketch1-2-1-args
-  [:draw draw1-2-1-01
+  [:setup setup1-2-1-01
+   :draw draw1-2-1-01
+   :update update1-2-1-01
    :mouse-clicked mouse-click1-2-1-01])
