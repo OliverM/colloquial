@@ -14,8 +14,8 @@
     (>= (+ new-x char-width) line-width)))
 
 (defn setup []
-  {;;  :img (q/load-image "resources/leprachaun.png")
-   :img (q/load-image "resources/blueyorange.png")
+  {;; :img (q/load-image "resources/blueyorange.png")
+   :img (q/load-image "resources/mrt.png")
    :font (q/create-font "Times" 10)
    :font-size-static false
    :black-and-white false
