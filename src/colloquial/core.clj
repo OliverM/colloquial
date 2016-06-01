@@ -7,6 +7,7 @@
             [colloquial.p121 :as p121]
             [colloquial.p20 :as p20]
             [colloquial.p211 :as p211]
+            [colloquial.p432 :as p432]
             ))
 
 (defn no-state-setup []
@@ -41,3 +42,4 @@
 ;; (run-sketch (concat threaded-state p121/sketch1-2-1-args))
 ;; (run-sketch (concat threaded-state p20/sketch2-0-2-args))
 ;; (run-sketch (concat threaded-state p211/sketch2-1-1-args))
+(run-sketch (concat threaded-state p432/sketch4-3-2-args))
