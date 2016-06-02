@@ -49,20 +49,19 @@
         (q/push-matrix)
         (q/translate x y)
         (if font-size-static
-          (do (q/text-font font font-size-max)
-              (if black-and-white (q/fill grey) (q/fill colour)))
+          (q/text-font font font-size-max)
           (let [font-size (q/map-range grey 0 255 font-size-max font-size-min)
                 font-size (max font-size 1)]
-            (q/text-font font font-size)
-            (if black-and-white (q/fill grey) (q/fill colour))))
+            (q/text-font font font-size)))
+        (if black-and-white (q/fill grey) (q/fill colour))
         (q/text letter 0 0)
         (q/pop-matrix)
+
+        ;; work out recurrence values
         (let [letter-width (+ (q/text-width letter) kerning)
               line-wrap (line-wrap? x letter-width w)
               counter (inc counter)
-              counter (if (> counter (dec text-len)) 0 counter)
-              ]
-          ;; (println (str "Text DEBUG: length " text-len ". counter " counter))
+              counter (if (> counter (dec text-len)) 0 counter)]
           (when (< y h)
             (if line-wrap
               (recur 0 (+ y spacing) counter)
