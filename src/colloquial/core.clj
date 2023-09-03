@@ -35,11 +35,15 @@
   [base & opts]
   (apply q/sketch (concat base opts)))
 
-;; (run-sketch no-state :draw misc/circle-draw)
-;; (run-sketch no-state :draw p10/draw-1-0-01)
-;; (run-sketch no-state :draw p111/draw-1-1-1-01-imp)
-;; (run-sketch no-state :draw p111/draw-1-1-1-01-fun)
-;; (run-sketch (concat threaded-state p121/sketch1-2-1-args))
-;; (run-sketch (concat threaded-state p20/sketch2-0-2-args))
-;; (run-sketch (concat threaded-state p211/sketch2-1-1-args))
-;; (run-sketch (concat threaded-state p432/sketch4-3-2-args))
+(comment
+
+  (run-sketch no-state :draw misc/circle-draw)
+  (run-sketch no-state :draw p10/draw-1-0-01)
+  (run-sketch no-state :draw p111/draw-1-1-1-01-imp)
+  (run-sketch no-state :draw p111/draw-1-1-1-01-fun)
+  (run-sketch (concat threaded-state p121/sketch1-2-1-args))
+  (run-sketch (concat threaded-state p20/sketch2-0-2-args))
+  (run-sketch (concat threaded-state p211/sketch2-1-1-args))
+  (run-sketch (concat threaded-state p432/sketch4-3-2-args))
+
+  )
