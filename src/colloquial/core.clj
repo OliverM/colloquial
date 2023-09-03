@@ -8,6 +8,7 @@
             [colloquial.p20 :as p20]
             [colloquial.p211 :as p211]
             [colloquial.p432 :as p432]
+            [colloquial.olive :as olive]
             ))
 
 (defn no-state-setup []
@@ -45,5 +46,11 @@
   (run-sketch (concat threaded-state p20/sketch2-0-2-args))
   (run-sketch (concat threaded-state p211/sketch2-1-1-args))
   (run-sketch (concat threaded-state p432/sketch4-3-2-args))
+  (run-sketch (concat [:title "Threaded state demonstrator"
+                       :settings #(q/smooth 2)
+                       :size [1000 1000]
+                       :features [:keep-on-top]
+                       :middleware [m/fun-mode]]
+                      olive/sketch-olive-args))
 
   )
